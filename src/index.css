@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://www.fontspace.com/plaguard-font-f56402");
+
+@font-face {
+  font-family: "plaguard";
+  src: url("./assets/Plaguard-ZVnjx.otf");
+}
