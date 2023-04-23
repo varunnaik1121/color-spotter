@@ -16,10 +16,10 @@ const Menu = () => {
     },
   ];
   return (
-    <div className="   absolute top-10  right-4 bg-game-primary  flex flex-col items-start justify-between w-[160px] pb-1">
+    <div className="   absolute top-10  right-4 bg-[rgb(49,46,43)]  flex flex-col items-start justify-between w-[160px] pb-1">
       {list.map((item, i) => (
         <div
-          className="flex justify-start  items-center w-full hover:bg-game mt-2 px-3 "
+          className="flex justify-start  items-center w-full hover:bg-[rgb(39,37,34)] mt-2 px-3 "
           key={i}
         >
           <img
@@ -29,7 +29,7 @@ const Menu = () => {
           <a href={item.path} className="mx-3">
             <li
               key={i}
-              className="text-text list-none text-sm  py-2  capitalize font-[400] "
+              className="text-[#ffffff] list-none text-sm  py-2  capitalize font-[400] "
             >
               {item.name}
             </li>

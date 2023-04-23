@@ -28,10 +28,10 @@ const Home = () => {
           </div>
         </>
       ) : (
-        <div className="text-text flex justify-center items-center w-full h-full border-1 border-game-secondary">
-          <div className='flex flex-col mt-8 w-full justify-center items-center'>
-          <h2 className='mt-[6%]'>Select Level</h2>
-          <SelectLevel />
+        <div className="text-[#ffffff] flex justify-center items-center w-full h-full border-1 border-[rgb(127,166,80)]">
+          <div className="flex flex-col mt-8 w-full justify-center items-center">
+            <h2 className="mt-[6%]">Select Level</h2>
+            <SelectLevel />
           </div>
         </div>
       )}

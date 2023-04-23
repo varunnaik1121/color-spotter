@@ -8,12 +8,12 @@ const Navbar = () => {
   const { isOpen, setIsOpen } = useGlobalContext();
 
   return (
-    <div className="bg-game px-8 py-4 flex justify-between items-center">
+    <div className="bg-[rgb(39,37,34)] px-8 py-4 flex justify-between items-center">
       <div>
         <img src={logo} alt="logo" className="w-8 h-8 object-cover" />
       </div>
       <div>
-        <h1 className="font-bold text-text md:text-2xl text-xl">
+        <h1 className="font-bold text-[#FFFFFF] md:text-2xl text-xl">
           Color Spotter
         </h1>
       </div>
@@ -21,12 +21,12 @@ const Navbar = () => {
         <div className="px-2 py-2">
           {isOpen ? (
             <AiOutlineClose
-              className="text-text text-2xl mx-2 cursor-pointer "
+              className="text-[#ffffff] text-2xl mx-2 cursor-pointer "
               onClick={() => setIsOpen(!isOpen)}
             />
           ) : (
             <BsThreeDots
-              className="text-text text-2xl mx-2 cursor-pointer "
+              className="text-[#FFFFFF] text-2xl mx-2 cursor-pointer "
               onClick={() => setIsOpen(!isOpen)}
             />
           )}

@@ -5,7 +5,7 @@ const Button = ({ title, onClick, minWidth }) => {
     <button
       onClick={onClick}
       style={{ minWidth: minWidth }}
-      className="bg-game-secondary rounded-md text-xl tracking-wider shadow-md  text-text py-2 mt-4"
+      className="bg-[rgb(127,166,80)] rounded-md text-xl tracking-wider shadow-inner shadow-[rgba(0,0,0,.2)]  text-[#ffffff] py-2 mt-4"
     >
       {title}
     </button>
