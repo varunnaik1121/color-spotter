@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 import { BsThreeDots } from 'react-icons/bs';
+import { AiOutlineClose } from 'react-icons/ai';
 import Menu from '../components/Menu';
+import { useGlobalContext } from '../context/context';
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const { isOpen, setIsOpen } = useGlobalContext();
+
   return (
     <div className="bg-game px-8 py-4 flex justify-between items-center">
       <div>
@@ -16,9 +19,19 @@ const Navbar = () => {
       </div>
       <div className="flex items-center relative">
         <div className="px-2 py-2">
-          <BsThreeDots className="text-text text-2xl mx-2 cursor-pointer " />
+          {isOpen ? (
+            <AiOutlineClose
+              className="text-text text-2xl mx-2 cursor-pointer "
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          ) : (
+            <BsThreeDots
+              className="text-text text-2xl mx-2 cursor-pointer "
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          )}
         </div>
-        <Menu />
+        {isOpen && <Menu />}
       </div>
     </div>
   );

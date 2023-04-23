@@ -12,6 +12,10 @@ module.exports = {
       text: {
         DEFAULT: '#FFFFFF',
       },
+      buttons: {
+        DEFAULT: 'rgb(65,65,65)',
+        primary: 'rgb(65,60,55)',
+      },
     },
     fontFamily: {
       valo: ['plaguard', 'sans-serif'],
