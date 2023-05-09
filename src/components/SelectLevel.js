@@ -29,7 +29,7 @@ const SelectLevel = () => {
   }, [selected]);
 
   return (
-    <div className="mt-4 w-full flex justify-center max-w-[400px] items-center">
+    <div className="mt-4 w-full flex justify-center max-w-[400px] items-center px-4">
       <div className="relative w-full">
         <div className="flex bg-[rgb(65,60,55)] items-center justify-between px-4 py-4 text-center rounded-md hover:bg-buttons ">
           <button onClick={handleOpen} id="level" className="w-full text-xl">

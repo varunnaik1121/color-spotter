@@ -25,7 +25,7 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <div className="bg-[rgb(49,46,43)] font-valo tracking-wider min-w-[100vw] min-h-[100vh] relative">
+    <div className="bg-[rgb(49,46,43)]  font-valo tracking-wider min-w-[100vw] min-h-[100vh] relative">
       <Navbar />
       <RouterProvider router={router}></RouterProvider>
     </div>
