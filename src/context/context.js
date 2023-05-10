@@ -8,6 +8,8 @@ export const AppContext = ({ children }) => {
   const [isMainMenu, setIsMainMenu] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState(data[0]);
+  const [lives, setLives] = useState(3);
+  const [userClicked, setUserClicked] = useState(0);
 
   return (
     <GlobalContext.Provider
@@ -18,6 +20,10 @@ export const AppContext = ({ children }) => {
         setIsOpen,
         selectedLevel,
         setSelectedLevel,
+        lives,
+        setLives,
+        userClicked,
+        setUserClicked,
       }}
     >
       {children}
