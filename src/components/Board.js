@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useGlobalContext } from '../context/context';
 import { data } from '../data/data';
-import { toast, ToastContainer } from 'react-toastify';
+
 //lets use rgba(0,0,0,level);
 //if index===selectedindex then it will be opacity of 0.9 for hard .7 for medium .6 for easy
 const Board = ({
@@ -9,8 +9,7 @@ const Board = ({
   setGrid,
   rows,
   setRows,
-  clickedTimes,
-  setClickedTimes,
+  
 }) => {
   let timeoutref = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -21,10 +20,10 @@ const Board = ({
 
   const level = localStorage.getItem('level');
   const INITIAL_SCORE = data.find((value) => value.level === level).basePoints;
-  console.log({ INITIAL_SCORE });
+ 
 
   const containerRef = useRef(null);
-  console.log({ currentColor });
+ 
 
   //lets create a random color
 
@@ -50,7 +49,7 @@ const Board = ({
   }, [isShaking]);
 
   const updateRows = (rows) => {
-    if (userClicked > 5) {
+    if (userClicked > 7) {
       setRows((prev) => prev + 1);
       setUserClicked(0);
     } else {
@@ -75,13 +74,13 @@ const Board = ({
   const changeDifficultyBasedOnLevel = (level) => {
     if (level === 'easy') return 0.8;
     else if (level === 'medium') return 0.2;
-    else return 0.48;
+    else return 0.4;
   };
 
   const setOpacity = (level) => {
-    if (level === 'easy') return 0.7;
+    if (level === 'easy') return 0.72;
     else if (level === 'medium') return 0.78;
-    else return 0.9;
+    else return 0.92;
   };
 
   const randomNumberInRange = (min, max) => {
@@ -91,7 +90,6 @@ const Board = ({
   const updateLevelAndScore = (e, index) => {
     setUserClicked((prev) => prev + 1);
     if (index === selectedIndex) {
-      console.log('right');
       setIsShaking(false);
 
       setScore((prev) => prev + INITIAL_SCORE);
@@ -100,22 +98,12 @@ const Board = ({
       //proceed to the next level
       updateRows(rows);
     } else {
-      toast.success('🦄 Wow so easy!', {
-        position: 'top-center',
-        autoClose: 1100,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'dark',
-      });
       setIsShaking(true);
 
       //remove one life from the user lifes
 
       //add shake class
-      //proceed to next level
+      //proceed to next 
       //dont update the score
     }
   };
@@ -129,14 +117,14 @@ const Board = ({
   return (
     <>
       <div
-        className={`w-[300px] h-[300px]  md:mt-[5%]   md:w-[500px] md:h-[500px]   grid `}
+        className={`w-[300px] h-[300px]  md:mt-[5%]   md:w-[420px] md:h-[420px]   grid `}
         style={{ gridTemplateColumns: `repeat(${rows},1fr)` }}
         ref={containerRef}
       >
         {grid.map((item, index) => {
           return (
             <button
-              className="w-full flex justify-center items-center outline-none "
+              className="w-full flex justify-center items-center outline-none  border "
               onClick={(e) => updateLevelAndScore(e, index)}
               key={index}
               style={{

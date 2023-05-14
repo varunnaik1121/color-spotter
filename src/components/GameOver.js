@@ -19,7 +19,7 @@ const GameOver = ({ setRows, setGrid, setLives }) => {
   };
 
   return (
-    <div className="min-w-[350px] max-w-[500px] text-lg  text-[#fff] shadow-lg  mt-[10%]">
+    <div className="min-w-[350px] md:min-w-[450px] max-w-[500px] text-lg  text-[#fff] shadow-lg  ">
       <div className="w-full flex justify-center items-center py-2 bg-[rgb(127,166,80)] ">
         <h2 className="text-center text-xl">Game Over</h2>
       </div>

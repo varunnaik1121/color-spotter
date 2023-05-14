@@ -4,9 +4,14 @@
 
 @import url("https://www.fontspace.com/plaguard-font-f56402");
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,400&display=swap');
+
+
 @font-face {
+  font-family: "Poppins";
   font-family: "plaguard";
   src: url("./assets/Plaguard-ZVnjx.otf");
+
 }
 
 @keyframes shake {
@@ -30,4 +35,8 @@
 .shake{
    animation: shake 0.5s;
 
+}
+
+.font-poppins{
+  font-family: 'Poppins', sans-serif;
 }

@@ -3,6 +3,7 @@ import logo from '../assets/logo.png';
 import { BsThreeDots } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
 import Menu from '../components/Menu';
+
 import { useGlobalContext } from '../context/context';
 const Navbar = () => {
   const { isOpen, setIsOpen } = useGlobalContext();
@@ -10,7 +11,9 @@ const Navbar = () => {
   return (
     <div className="bg-[rgb(39,37,34)] px-8 py-4 flex justify-between items-center">
       <div>
-        <img src={logo} alt="logo" className="w-8 h-8 object-cover" />
+        <a href="/">
+          <img src={logo} alt="logo" className="w-8 h-8 object-cover" />
+        </a>
       </div>
       <div>
         <h1 className="font-bold text-[#FFFFFF] md:text-2xl text-xl">

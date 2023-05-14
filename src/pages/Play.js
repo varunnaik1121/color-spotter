@@ -3,7 +3,7 @@ import Board from '../components/Board';
 import HealthBar from '../components/HealthBar';
 import { useGlobalContext } from '../context/context';
 import GameOver from '../components/GameOver';
-import { ToastContainer } from 'react-toastify';
+
 const Play = () => {
   const { lives, setLives, score } = useGlobalContext();
   const [rows, setRows] = useState(2);
@@ -13,7 +13,6 @@ const Play = () => {
   useEffect(() => {
     setGrid(new Array(rows * rows).fill(''));
   }, [rows]);
-  console.log({ grid });
 
   useEffect(() => {
     if (lives === 0) {
@@ -28,14 +27,14 @@ const Play = () => {
 
   if (lives === 0) {
     return (
-      <div className="w-full flex h-full justify-center items-center">
+      <div className="w-full flex h-full justify-center translate-y-[-40%] items-center">
         <GameOver setLives={setLives} setRows={setRows} setGrid={setGrid} />
       </div>
     );
   }
   return (
     <>
-      <div className="flex justify-center items-center flex-col w-full overflow-x-hidden h-[90vh]">
+      <div className="flex  items-center justify-start flex-col w-full overflow-x-hidden h-max  flex-1 py-[40px]">
         <HealthBar lives={lives} />
         {rows && (
           <Board

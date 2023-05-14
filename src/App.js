@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 import Score from './pages/Score';
 import Play from './pages/Play';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Footer from './footer/Footer';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -25,9 +26,10 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <div className="bg-[rgb(49,46,43)]  font-valo tracking-wider min-w-[100vw] min-h-[100vh] relative">
+    <div className="bg-[rgb(49,46,43)]  font-valo tracking-wider flex flex-col justify-between max-w-[100vw] min-h-[100vh] relative ">
       <Navbar />
       <RouterProvider router={router}></RouterProvider>
+      <Footer />
     </div>
   );
 }

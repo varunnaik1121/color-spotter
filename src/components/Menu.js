@@ -22,7 +22,7 @@ const Menu = () => {
     },
   ];
   return (
-    <div className="   absolute top-10  right-4 bg-[rgb(49,46,43)]  flex flex-col items-start justify-between w-[160px] pb-1">
+    <div className="   absolute z-40 top-10  right-4 bg-[rgb(49,46,43)]  flex flex-col items-start justify-between w-[160px] pb-1">
       {list.map((item, i) => (
         <div
           className="flex justify-start  items-center w-full hover:bg-[rgb(39,37,34)] mt-2 px-3 "
