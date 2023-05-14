@@ -10,6 +10,7 @@ export const AppContext = ({ children }) => {
   const [selectedLevel, setSelectedLevel] = useState(data[0]);
   const [lives, setLives] = useState(3);
   const [userClicked, setUserClicked] = useState(0);
+  const [score, setScore] = useState(0);
 
   return (
     <GlobalContext.Provider
@@ -24,6 +25,8 @@ export const AppContext = ({ children }) => {
         setLives,
         userClicked,
         setUserClicked,
+        score,
+        setScore,
       }}
     >
       {children}

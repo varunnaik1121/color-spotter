@@ -19,7 +19,7 @@ const SelectLevel = () => {
   };
 
   const handlePlay = () => {
-    localStorage.clear();
+    localStorage.removeItem('level');
     localStorage.setItem('level', selected || 'easy');
     navigate('/play');
   };
@@ -33,7 +33,7 @@ const SelectLevel = () => {
       <div className="relative w-full">
         <div className="flex bg-[rgb(65,60,55)] items-center justify-between px-4 py-4 text-center rounded-md hover:bg-buttons ">
           <button onClick={handleOpen} id="level" className="w-full text-xl">
-            {selected ? selected : 'choose level'}
+            {selected ? selected : 'choose difficulty'}
           </button>
           <label htmlFor="level">
             {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}

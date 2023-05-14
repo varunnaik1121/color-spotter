@@ -11,9 +11,7 @@ const Home = () => {
   const handleStart = () => {
     setIsMainMenu(false);
   };
-  useEffect(() => {
-    console.log('home page rendered');
-  });
+
   return (
     <>
       {isMainMenu ? (

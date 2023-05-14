@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useGlobalContext } from '../context/context';
-
+import { data } from '../data/data';
+import { toast, ToastContainer } from 'react-toastify';
 //lets use rgba(0,0,0,level);
 //if index===selectedindex then it will be opacity of 0.9 for hard .7 for medium .6 for easy
 const Board = ({
@@ -15,9 +16,12 @@ const Board = ({
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isShaking, setIsShaking] = useState(false);
   const [currentColor, setCurrentColor] = useState('');
-  const { userClicked, setUserClicked, lives, setLives } = useGlobalContext();
+  const { userClicked, setUserClicked, lives, setLives, score, setScore } =
+    useGlobalContext();
 
   const level = localStorage.getItem('level');
+  const INITIAL_SCORE = data.find((value) => value.level === level).basePoints;
+  console.log({ INITIAL_SCORE });
 
   const containerRef = useRef(null);
   console.log({ currentColor });
@@ -89,11 +93,23 @@ const Board = ({
     if (index === selectedIndex) {
       console.log('right');
       setIsShaking(false);
+
+      setScore((prev) => prev + INITIAL_SCORE);
       //update score to db
       //increase the click count
       //proceed to the next level
       updateRows(rows);
     } else {
+      toast.success('🦄 Wow so easy!', {
+        position: 'top-center',
+        autoClose: 1100,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark',
+      });
       setIsShaking(true);
 
       //remove one life from the user lifes
@@ -120,7 +136,7 @@ const Board = ({
         {grid.map((item, index) => {
           return (
             <button
-              className="w-full     flex justify-center items-center outline-none  border "
+              className="w-full flex justify-center items-center outline-none "
               onClick={(e) => updateLevelAndScore(e, index)}
               key={index}
               style={{
