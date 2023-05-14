@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './navbar/Navbar';
+import Navbar from './navbar/Navbar.js';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Score from './pages/Score';

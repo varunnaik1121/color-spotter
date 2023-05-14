@@ -2,7 +2,7 @@ import React from 'react';
 import scoreIcon from '../assets/points.png';
 import account from '../assets/account.png';
 import home from '../assets/home1.png';
-import { MdOutlineAccountCircle } from 'react-icons/md';
+
 const Menu = () => {
   const list = [
     {
